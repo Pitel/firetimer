@@ -2,22 +2,24 @@ package cz.pitel.firetimer;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
 public class Firetimer extends Activity {
-    @InjectView(R.id.button) Button button;
-    @InjectView(R.id.progress) ProgressBar progress;
+    @InjectView(R.id.button)
+    Button button;
+    @InjectView(R.id.progress)
+    ProgressBar progress;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity);
+        ButterKnife.inject(this);
     }
 
     /*
