@@ -1,7 +1,9 @@
 package cz.pitel.firetimer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
@@ -9,17 +11,23 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
-public class Firetimer extends Activity {
+public class FireActivity extends Activity {
+    /*
     @InjectView(R.id.button)
     Button button;
     @InjectView(R.id.progress)
     ProgressBar progress;
+    */
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity);
-        ButterKnife.inject(this);
+        //ButterKnife.inject(this);
+    }
+
+    public void fire(final View v) {
+        startService(new Intent(this, FireService.class));
     }
 
     /*
